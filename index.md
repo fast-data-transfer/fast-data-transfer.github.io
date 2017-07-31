@@ -1,3 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Fast Data Transfer - FDT</title>
+</head>
+<header>
+  <nav>
+    <ul>
+      {% for item in site.menus.header %}
+        <li><a href="{{ item.url }}">
+          {{ item.title }}
+        </a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+</header>
+<body>
 <H1>Fast Data Transfer - FDT</H1>
 FDT is an Application for Efficient Data Transfers which is capable of reading and writing at disk speed over wide area networks (with standard TCP). It is written in Java, runs an all major platforms and it is easy to use.
 
@@ -11,3 +30,7 @@ Restores the files from buffers asynchronously
 
 Resumes a file transfer session without loss, when needed
 FDT can be used to stream a large set of files across the network, so that a large dataset composed of thousands of files can be sent or received at full speed, without the network transfer restarting between files.
+</body>
+</html>
+
+

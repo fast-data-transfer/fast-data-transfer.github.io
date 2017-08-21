@@ -8,7 +8,9 @@
 directory to another computer
 in the "/home/remoteuser/destiantionDir" folder, with default
 parameters, there are two options:
+
 - Client/Server mode
+
 First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
 
 ```
@@ -28,6 +30,7 @@ OR
 ```
 
 - Secure Copy (SCP) mode
+
 In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
 ```
@@ -46,8 +49,10 @@ If the remoteuser parameter is not specified the local user, runningthe fdt comm
 located in the user's home directory, the -r ( recursive
 mode ) flag will be specified and also -pull to sink the data from the
 server. In the Client/Server mode the access to the server will be
-restricted to the local IP addresses only ( with -f flag ).<br>
+restricted to the local IP addresses only ( with -f flag ).
+
 - Client/Server mode
+
 Multiple addresses may be specfied using the -f flag using ':'. If theclient's IP address(es) is not specified in the allowed IP addressesthe connection will be closed. In the following command the server isstarted in standalone mode, which means that will continue to run afterthe session will finish. The transfer rate for every client sessionswill be limited to 4 MBytes/s
 
 ```
@@ -73,6 +78,7 @@ OR
 ```
 
 - SCP mode
+
 In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Sameauthentication policies apply as in the first example
 
 ```
@@ -89,6 +95,7 @@ OR
 which transfers data from /dev/zero to /dev/null using 10 streams in
 blocking mode, for both the server and the client with 8 MBytes
 buffers. The server will stop after the test is finished
+
 - Client/Server mode
 
 ```
@@ -119,6 +126,7 @@ devices and will use a dedicated thread for each device.
 
 5. To test the local read/write performance of the local disk the
 DDCopy may be used.
+
 - The following command will copy the entire partition
 /dev/dsk/c0d1p1 to /dev/null reporting every 2 seconds ( the default )
 the I/O speed

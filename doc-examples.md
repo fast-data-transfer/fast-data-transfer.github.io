@@ -8,12 +8,13 @@
 directory to another computer
 in the "/home/remoteuser/destiantionDir" folder, with default
 parameters, there are two options:
-    -- Client/Server mode
-    First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
+- Client/Server mode
+First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
 
 ```
 [remote computer]$ java -jar fdt.jar -S
 ```
+
 Then,the client will be started on the local system specifying the sourcefile, the remote address (or hostname) where the server was started inthe previous step and the destination directory
         
 ```
@@ -26,7 +27,7 @@ OR
 [local computer]$ java -jar fdt.jar -c <remote_address> -d destinationDir ./local.data
 ```
 
--- Secure Copy (SCP) mode
+- Secure Copy (SCP) mode
 In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
 ```
@@ -46,12 +47,13 @@ located in the user's home directory, the -r ( recursive
 mode ) flag will be specified and also -pull to sink the data from the
 server. In the Client/Server mode the access to the server will be
 restricted to the local IP addresses only ( with -f flag ).<br>
--- Client/Server mode
+- Client/Server mode
 Multiple addresses may be specfied using the -f flag using ':'. If theclient's IP address(es) is not specified in the allowed IP addressesthe connection will be closed. In the following command the server isstarted in standalone mode, which means that will continue to run afterthe session will finish. The transfer rate for every client sessionswill be limited to 4 MBytes/s
 
 ```
 [remote computer]$ java -jar fdt.jar -f allowedIP1:allowedIP2 -limit 4M
 ```
+
 OR
 
 ```
@@ -70,7 +72,7 @@ OR
 [local computer]$ java -jar fdt.jar -pull -r -c <remote_address> -d localDir remoteDir
 ```
 
--- SCP mode
+- SCP mode
 In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Sameauthentication policies apply as in the first example
 
 ```
@@ -87,7 +89,7 @@ OR
 which transfers data from /dev/zero to /dev/null using 10 streams in
 blocking mode, for both the server and the client with 8 MBytes
 buffers. The server will stop after the test is finished
--- Client/Server mode
+- Client/Server mode
 
 ```
 [remote computer]$ java -jar fdt.jar -bio -bs 8M -f allowedIP -S
@@ -97,7 +99,7 @@ buffers. The server will stop after the test is finished
 [local computer]$ java -jar fdt.jar -c <remote_address> -bio -P 10 -d /dev/null /dev/zero
 ```
 
--- SCP mode
+- SCP mode
 
 ```
 [local computer]$ java -jar fdt.jar -bio -P 10 /dev/zero remoteAddress:/dev/null
@@ -117,7 +119,7 @@ devices and will use a dedicated thread for each device.
 
 5. To test the local read/write performance of the local disk the
 DDCopy may be used.
--- The following command will copy the entire partition
+- The following command will copy the entire partition
 /dev/dsk/c0d1p1 to /dev/null reporting every 2 seconds ( the default )
 the I/O speed
 
@@ -125,7 +127,7 @@ the I/O speed
 [local computer]$ java -cp fdt.jar lia.util.net.common.DDCopy if=/dev/dsk/c0d1p1 of=/dev/null
 ```
 
--- To test the write speed of the file system using a 1GB file
+- To test the write speed of the file system using a 1GB file
 read from /dev/zero the following command may be used. The operating
 system will sync() the data to the disk. The data will be read/write
 using 10MB buffers

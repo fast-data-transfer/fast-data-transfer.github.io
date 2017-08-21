@@ -13,6 +13,7 @@ For both systems we used the default TCP congestion control (CUBIC)
 MonALISA was used for all the monitoring.
 The total transfer rate for data files from CERN to Caltech using the two disk controllers in parallel on both servers is shown in Figure 1.
 Total network traffic for disk to disk transfer between CERN and Caltech using two RAID controllers per server
+
 ![Figure 1. Total network traffic for disk to disk transfer between CERN and Caltech using two RAID controllers per server.](/img/figure1.png)
 
 The total Disk IO on the receiving server (Caltech) is shown in Figure 2.
@@ -20,6 +21,7 @@ The total Disk IO on the receiving server (Caltech) is shown in Figure 2.
 ![Figure 2. Total disk IO for the receiving server (the writer). The mean value is ~ 545 MB/s.](/img/figure2.png)
 
 The CPU utilization for the receiving server (the writer) is presented in Figure 3. The CPU system is ~ 50% and the used for soft interrupts is ~ 15%.
+
 ![Figure 3. The CPU utilization for the receiving server](/img/figure3.png)
 
 **The mean disk to disk transfer rate between the two servers was 545MB/s, which means 1.96 TB per hour.**
@@ -28,11 +30,6 @@ If we used only one RAID controller in the data transfer on each server the tota
 
 ![Figure 4. The total network throughput for a Disk to disk transfer between CERN - Caltech, when only 
 one RAID controller was used on both servers](/img/figure4.png)
-
-
- 
-
- 
 
 ##### 2. Simple Servers
 

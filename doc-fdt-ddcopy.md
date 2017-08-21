@@ -84,8 +84,8 @@ where OPTIONS may be:
 
 **flags=\<flag>**          The <flag> field can have of the following values:
                           **SYNC**    For every write both data and metadata are written synchronously
-                          **DSYCN **  Same as SYNC, but only the data is written synchronously.
-                          **NOSYNC ** The sync() is left to be done by the underlying OS
+                          **DSYCN**  Same as SYNC, but only the data is written synchronously.
+                          **NOSYNC** The sync() is left to be done by the underlying OS
                          The default value is **DSYNC**
 
 **rformat=\<rformat>**     Report format. Possible values are:

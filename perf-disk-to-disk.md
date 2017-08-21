@@ -20,13 +20,19 @@ Total network traffic for disk to disk transfer between CERN and Caltech using t
 
 ![Figure 1. Total network traffic for disk to disk transfer between CERN and Caltech using two RAID controllers per server.](/img/figure1.png)
 
+Figure 1. Total network traffic for disk to disk transfer between CERN and Caltech using two RAID controllers per server.
+
 The total Disk IO on the receiving server (Caltech) is shown in Figure 2.
 
 ![Figure 2. Total disk IO for the receiving server (the writer). The mean value is ~ 545 MB/s.](/img/figure2.png)
 
+Figure 2. Total disk IO for the receiving server (the writer). The mean value is ~ 545 MB/s.
+
 The CPU utilization for the receiving server (the writer) is presented in Figure 3. The CPU system is ~ 50% and the used for soft interrupts is ~ 15%.
 
 ![Figure 3. The CPU utilization for the receiving server](/img/figure3.png)
+
+Figure 3. The CPU utilization for the receiving server
 
 **The mean disk to disk transfer rate between the two servers was 545MB/s, which means 1.96 TB per hour.**
 
@@ -34,6 +40,9 @@ If we used only one RAID controller in the data transfer on each server the tota
 
 ![Figure 4. The total network throughput for a Disk to disk transfer between CERN - Caltech, when only 
 one RAID controller was used on both servers](/img/figure4.png)
+
+Figure 4. The total network throughput for a Disk to disk transfer between CERN - Caltech, when only 
+one RAID controller was used on both servers
 
 ##### 2. Simple Servers
 
@@ -46,5 +55,7 @@ The server used:
 FDT was used to read and write on parallel on all four SATA HDs on both servers. The total disk IO for the sender server is presented in Figure 5.
 
 ![Figure 5. The total disk IO traffic for a data transfer between CERN and MANLAN using in parallel 4 SATA HDs on both servers.](/img/figure5.png)
+
+Figure 5. The total disk IO traffic for a data transfer between CERN and MANLAN using in parallel 4 SATA HDs on both servers.
 
 The mean transfer rate was ~ 210MB/s or 0.75 TB per hour.

@@ -4,11 +4,11 @@
 
 ### FDT
 **FDT** can be used in one of these five modes:
-    **Server**: java -jar fdt.jar [ OPTIONS ]
-    **Client**: java -jar fdt.jar [ OPTIONS ] -c <host> [file1 ...]|[-fl <fileList>] -d <destinationDirectory>
-    **SCP**: java -jar fdt.jar [ OPTIONS ] [[[user@][host1:]]file1 [[[user@][host2:]]file2
-    **Coordinator**: java -jar fdt.jar [OPTIONS] -c <host> -d <destinationDirectory> -sID <sessionID>
-    **List Files**: java -jar fdt.jar [OPTIONS] -c <host> -ls <ls-path>
+* **Server**: java -jar fdt.jar [ OPTIONS ]
+* **Client**: java -jar fdt.jar [ OPTIONS ] -c <host> [file1 ...]|[-fl <fileList>] -d <destinationDirectory>
+* **SCP**: java -jar fdt.jar [ OPTIONS ] [[[user@][host1:]]file1 [[[user@][host2:]]file2
+* **Coordinator**: java -jar fdt.jar [OPTIONS] -c <host> -d <destinationDirectory> -sID <sessionID>
+* **List Files**: java -jar fdt.jar [OPTIONS] -c <host> -ls <ls-path>
 In Server mode the FDT will start listening for incoming client connections. The server may or may not stop after the last client finishes the transfer. In Client mode the client will connect to the specified host, where an FDT Server is expected to be running. The client can either read or write file from/to the server. 
 
 In the SCP (Secure Copy) mode the local FDT instance will use SSH to start/stop the FDT server and/or client.  The security is based on ssh credentials. The server started in this mode will accept connections **ONLY** from the "SCP" client. It is possible to restrict the access for the FDT Servers started from the command line using the -f option. The option accepts a list of IP addresses separated by ':'. 

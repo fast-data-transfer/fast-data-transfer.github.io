@@ -27,7 +27,7 @@ OR
 
 - Secure Copy (SCP) modeIn this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
-  ```
+```
 [local computer]$ java -jar fdt.jar /home/localuser/local.data remoteuser@<remote_address>:/home/remoteuser/destinationDir
 ```
 

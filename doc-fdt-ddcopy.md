@@ -5,12 +5,12 @@
 ### FDT
 **FDT** can be used in one of these seven modes:
 * **Server**: java -jar fdt.jar [ OPTIONS ]
-* **Client**: java -jar fdt.jar [ OPTIONS ] -c <host> [file1 ...]|[-fl <fileList>] -d <destinationDirectory>
+* **Client**: java -jar fdt.jar [ OPTIONS ] -c \<host> [file1 ...]|[-fl \<fileList>] -d \<destinationDirectory>
 * **SCP**: java -jar fdt.jar [ OPTIONS ] [[[user@][host1:]]file1 [[[user@][host2:]]file2
-* **Coordinator**: java -jar fdt.jar [OPTIONS]  -dIP <destination-ip> -dp <destination-port> -sIP <source-ip> -p <source-port> -d <destinationDirectory>  [-fl <fileList>] -coord
-* **List Files**: java -jar fdt.jar [OPTIONS] -c <host> -ls <ls-path>
-* **Agent**: java -jar fdt.jar [OPTIONS] -c <host>  -tp <transfer,ports,separated,with,comma> -agent 
-* **Session log**: java -jar fdt.jar [OPTIONS] -c <host> -d <destinationDirectory> -sID <session-ID>
+* **Coordinator**: java -jar fdt.jar [OPTIONS]  -dIP \<destination-ip> -dp \<destination-port> -sIP \<source-ip> -p \<source-port> -d \<destinationDirectory>  [-fl \<fileList>] -coord
+* **List Files**: java -jar fdt.jar [OPTIONS] -c \<host> -ls \<ls-path>
+* **Agent**: java -jar fdt.jar [OPTIONS] -c \<host>  -tp \<transfer,ports,separated,with,comma> -agent 
+* **Session log**: java -jar fdt.jar [OPTIONS] -c \<host> -d \<destinationDirectory> -sID \<session-ID>
 
 In Server mode the FDT will start listening for incoming client connections. The server may or may not stop after the last client finishes the transfer. In Client mode the client will connect to the specified host, where an FDT Server is expected to be running. The client can either read or write file from/to the server. 
 
@@ -22,7 +22,7 @@ To retrieve list of files on custom path there is a custom mode which can be use
 
 The OPTIONS currently supported may be server or client specific, or may be used in both modes.
 
-Common  options used for both server and client:
+**Common  options used for both server and client :**
 
 **-gsi** enables GSI authentication scheme in FDT. When started in server mode the FDT will open two TCP ports: one for GSI authentication and the other one for data channels
 
@@ -48,7 +48,7 @@ Common  options used for both server and client:
 
 **-u, -update** Update. If a newer version of fdt.jar is available on the update server it will update the local copy 
 
-**Server options:**
+**Server options :**
 
 **-S** disable the standalone mode; when specified the FDT Server will stop after the last client finishes. By default, the server will continue to listen for incoming clients. This option is automatically passed to the server started in "SCP" mode. 
 
@@ -56,7 +56,7 @@ Common  options used for both server and client:
 
 **-f \<allowedIPsList>** A list of IP addresses allowed to connect to the server. Multiple IPs may be specified, separated by ':'
 
-**Client options:**
+**Client options :**
 
 **-c \<host>** connect to the specified host. If this parameter is missing the FDT will become server
 
@@ -74,7 +74,7 @@ Common  options used for both server and client:
 
 **-P \<noOfStreams>** Number of paralel streams to use. Default is 4.
 
-**Common options used for FDT Agent mode**
+**Common options used for FDT Agent mode :**
 
 Agent can use booth Server and Client options too, because at any time Agent can be Server or Client
 
@@ -84,7 +84,7 @@ Agent can use booth Server and Client options too, because at any time Agent can
 
 **-agent** Option for FDT to run as agent.
 
-**Common options used for FDT Coordinator mode**
+**Common options used for FDT Coordinator mode :**
 
 **-d \<dstDir>** The destination directory used to copy files. 
 
@@ -100,13 +100,13 @@ Agent can use booth Server and Client options too, because at any time Agent can
 
 **-coord** Option for FDT to run as coordinator.
 
-**Common options used for FDT List Files mode**
+**Common options used for FDT List Files mode :**
 
 **-c \<host>** connect to the specified host. If this parameter is missing the FDT will become server
 
 **-ls \<ls-path>** path from where user wants to see lits of files
 
-**Common options used for FDT Session log file retrieving mode**
+**Common options used for FDT Session log file retrieving mode :**
 
 **-c \<host>** connect to the specified host. If this parameter is missing the FDT will become server
 

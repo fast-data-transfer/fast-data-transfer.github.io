@@ -1,6 +1,6 @@
-[[Home](index.md)]  [[Performance Tests](perf-disk-to-disk.md)]
+[[Home](index.md)]  [Documentation]  [[Performance Tests](perf-disk-to-disk.md)]
 
-[[FDT & DDCopy](doc-fdt-ddcopy.md)]   [[Security](doc-security.md)]    [[User's Extensions](doc-user-extensions.md)]    [[System Tuning](doc-system-tuning.md)]
+[[FDT & DDCopy](doc-fdt-ddcopy.md)]   [Examples]   [[Security](doc-security.md)]    [[User's Extensions](doc-user-extensions.md)]    [[System Tuning](doc-system-tuning.md)]
 
 ### Examples
 
@@ -149,3 +149,32 @@ OR
 ```
 [local computer]$ java -cp fdt.jar lia.util.net.common.DDCopy  if=/dev/zero of=/home/user/1GBTestFile bs=1M bn=10 count=100 flags=NOSYNC
 ```
+
+- Launching FDT as Agent example:
+
+```
+java -jar fdt.jar -tp <transfer,ports,separated,by,comma> -p <portNo> -agent
+```
+
+- Sending coordinator message to the agent:
+
+```
+java -jar fdt.jar -dIP <destination-ip> -dp <destination-port> -sIP <source-ip> -p <source-port> -d /tmp/destination/files -fl /tmp/file-list-on-source.txt -coord
+```
+- Retrieving session log file. 
+
+To retrieve session log file user needs to provide at least these parameters:
+
+```
+java -jar fdt.jar  -c <source-host> -d /tmp/destination/files -sID <session-ID>
+```
+
+- To retrieve list of files on custom path there is a custom mode which can be used.
+
+```
+java -jar fdt.jar  -c <source-host> -ls /tmp/
+```
+
+
+
+

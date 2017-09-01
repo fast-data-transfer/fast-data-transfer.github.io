@@ -1,6 +1,6 @@
-[[Home](index.md)]   [[Performance Tests](perf-disk-to-disk.md)]
+[[Home](index.md)]   [Documentation]  [[Performance Tests](perf-disk-to-disk.md)]
 
-[[FDT & DDCopy](doc-fdt-ddcopy.md)]   [[Examples](doc-examples.md)]    [[User's Extensions](doc-user-extensions.md)]    [[System Tuning](doc-system-tuning.md)]
+[[FDT & DDCopy](doc-fdt-ddcopy.md)]   [[Examples](doc-examples.md)]   [Security]   [[User's Extensions](doc-user-extensions.md)]    [[System Tuning](doc-system-tuning.md)]
 
 ### FDT Security
 FDT provides several security schemes to allow sending and receiving files over public networks.

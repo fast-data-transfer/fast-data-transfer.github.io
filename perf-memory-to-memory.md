@@ -1,6 +1,6 @@
 [[Home](index.md)]   [[Documentation](doc-fdt-ddcopy.md)]   [Performance Tests]
 
-[[Disk to Disk](perf-disk-to-disk.md)]   [Memmory to Memmory]   [[SC06](perf-sc06.md)]   [[SC08](perf-sc08.md)]   [[SC09](perf-sc09.md)]
+[[Disk to Disk](perf-disk-to-disk.md)]   [Memory to Memory]   [[SC06](perf-sc06.md)]   [[SC08](perf-sc08.md)]   [[SC09](perf-sc09.md)]
 
 ### FDT Tests for Memory to Memory Transfers
 ##### Setup and Topology

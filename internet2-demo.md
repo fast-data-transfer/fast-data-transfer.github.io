@@ -12,11 +12,11 @@
 # install java and FDT
 sudo yum install -y wget
 sudo yum install -y java-1.8.0-openjdk.x86_64
-wget https://github.com/fast-data-transfer/fdt/releases/download/untagged-49bd5295462c4b0ca004/fdt.jar
 java -version
 #openjdk version "1.8.0_144"
 #OpenJDK Runtime Environment (build 1.8.0_144-b01)
 #OpenJDK 64-Bit Server VM (build 25.144-b01, mixed mode)
+wget https://github.com/fast-data-transfer/fdt/releases/download/0.25/fdt.jar
 ```
 
 
@@ -25,7 +25,7 @@ java -version
 
 Send one file called "local.data" from the local system
 directory to another computer
-in the "/home/remoteuser/destiantionDir" folder, with default
+in the "/tmp" folder, with default
 parameters
 
 First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
@@ -35,9 +35,10 @@ First,the FDT server needs to be started on the remote system. ( The defaultsett
 ```
 
 Then,the client will be started on the local system specifying the sourcefile, the remote address (or hostname) where the server was started inthe previous step and the destination directory
-        
+
 ```
-[local computer]$ java -jar fdt.jar -c <remote_address> -d /home/remoteuser/destinationDir /home/localuser/local.data
+echo "local.data" > local.data
+[local computer]$ java -jar fdt.jar -c <remote_address> -d /tmp ./local.data
 ```
 
 OR

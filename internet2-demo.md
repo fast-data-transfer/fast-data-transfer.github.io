@@ -1,5 +1,20 @@
 [[Home](index.md)]  [[Documentation](doc-fdt-ddcopy.md)]  [[Performance Tests](perf-disk-to-disk.md)] [[Internet2 Demo]
 
+
+# Internet2 2017 Technology Exchange: The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
+
+
+## Setup and FDT Installation
+
+# public ssh keys and access to your Google Cloud VM
+
+# install java and FDT
+yum install -y wget
+yum install -y java-1.8.0-openjdk.x86_64
+wget https://github.com/fast-data-transfer/fdt/releases/download/untagged-49bd5295462c4b0ca004/fdt.jar
+
+
+
 ### Examples
 
 1. To send one file called "local.data" from the local system

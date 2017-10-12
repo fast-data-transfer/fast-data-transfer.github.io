@@ -1,4 +1,4 @@
-[[Home](index.md)]   [[Documentation](doc-fdt-ddcopy.md)]   [Performance Tests]
+[[Home](index.md)]   [[Documentation](doc-fdt-ddcopy.md)]   [Performance Tests] [[Internet2 Demo](internet2-demo.md)]
 
 [Disk to Disk]   [[Memory to Memory](perf-memory-to-memory.md)]   [[SC06](perf-sc06.md)]   [[SC08](perf-sc08.md)]   [[SC09](perf-sc09.md)]
 

@@ -2,18 +2,33 @@
 
 
 
-### Internet2 2017 Technology Exchange:The Fast Data Transfer Tool
+### Internet2 2017 Technology Exchange: The Fast Data Transfer Tool
 #### Overcoming Limitations to High Performance Transfers Over the Wide Area Network
 
 
-**Access to your Google Cloud VM**
+**Access to your Google Cloud VMs**
 
-Open two windows and ssh into the VMs using the username `fdt` and the password given at the tutorial
+Open two windows and ssh into the VMs using the username `fdt` and the IPs and password given at the tutorial.
 
 ```
 ssh -l fdt <VM1-IP>
 ssh -l fdt <VM2-IP>
 ```
+
+On VM1
+```
+export SERVER1=$(hostname --ip-address)
+```
+
+On VM2
+```
+export SERVER2=$(hostname --ip-address)
+```
+
+Export these values on the other VM too, i.e. copy SERVER1 on VMS2 and SERVER2 on VM1. These will be the private IP addresses, not the ones you used above for login into the VMs.
+
+
+
 
 **Setup and FDT Installation**
 
@@ -21,17 +36,16 @@ On Both VMs:
 ```
 # install java and FDT
 sudo yum install -y wget
+
 sudo yum install -y java-1.8.0-openjdk.x86_64
 java -version
-#openjdk version "1.8.0_144"
-#OpenJDK Runtime Environment (build 1.8.0_144-b01)
-#OpenJDK 64-Bit Server VM (build 25.144-b01, mixed mode)
+
 wget https://github.com/fast-data-transfer/fdt/releases/download/0.26/fdt.jar
 java -jar fdt.jar -version
 ```
 
 
-**File copying**
+**Copy a file**
 
 
 Send one file called "local.data" from the local system
@@ -39,11 +53,10 @@ directory to another computer
 in the "/tmp" folder, with default
 parameters
 
-First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
+First,the FDT server needs to be started on the remote system. ( The default settings will be used, which implies the default port, 54321, on both the client and the server ). -S is used to disable the standalone mode, which means that the server will stop after the session will finish.
 
 On VM2:
 ```
-hostname --ip-address # use this address below
 [remote computer]$ java -jar fdt.jar -S
 ```
 
@@ -53,7 +66,7 @@ On VM1:
 ```
 echo "local.data" > local.data
 for i in `seq 100`; do echo "local data"; done > local.data
-[local computer]$ java -jar fdt.jar -c <remote_address> -d /tmp ./local.data
+[local computer]$ java -jar fdt.jar -c $SERVER2 -d /tmp ./local.data
 ```
 
 OR

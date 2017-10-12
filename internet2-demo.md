@@ -2,9 +2,7 @@
 
 
 
-<center>
 ### Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
-</center>
 
 
 **Access to your Google Cloud VM**
@@ -27,7 +25,7 @@ java -version
 #openjdk version "1.8.0_144"
 #OpenJDK Runtime Environment (build 1.8.0_144-b01)
 #OpenJDK 64-Bit Server VM (build 25.144-b01, mixed mode)
-wget https://github.com/fast-data-transfer/fdt/releases/download/0.25/fdt.jar
+wget https://github.com/fast-data-transfer/fdt/releases/download/0.26/fdt.jar
 ```
 
 
@@ -49,6 +47,7 @@ Then,the client will be started on the local system specifying the sourcefile, t
 
 ```
 echo "local.data" > local.data
+for i in `seq 100`; do echo "local data"; done > local.data
 [local computer]$ java -jar fdt.jar -c <remote_address> -d /tmp ./local.data
 ```
 

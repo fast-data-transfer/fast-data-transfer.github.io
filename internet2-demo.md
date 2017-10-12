@@ -16,7 +16,7 @@ wget https://github.com/fast-data-transfer/fdt/releases/download/untagged-49bd52
 ```
 
 
-**Client-Server file copying**
+**File copying**
 
 
 Send one file called "local.data" from the local system
@@ -42,7 +42,7 @@ OR
 [local computer]$ java -jar fdt.jar -c <remote_address> -d destinationDir ./local.data
 ```
 
-**Secure Copy (SCP) Mode**
+__Secure Copy (SCP) Mode__
 
 In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
@@ -58,7 +58,7 @@ OR
 
 If the remoteuser parameter is not specified the local user, runningthe fdt command, will beused to login on the remote system
 
-**Client-Server recursive copying **
+**Recursive copying**
 
 To get the content of an entire folder and all its children,
 located in the user's home directory, the -r ( recursive
@@ -90,7 +90,7 @@ OR
 [local computer]$ java -jar fdt.jar -pull -r -c <remote_address> -d localDir remoteDir
 ```
 
-**Recursive copying in SCP mode**
+__Recursive copying in SCP mode__
 
 In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Sameauthentication policies apply as in the first example
 

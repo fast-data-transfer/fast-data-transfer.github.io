@@ -1,7 +1,7 @@
 [[Home](index.md)]  [[Documentation](doc-fdt-ddcopy.md)]  [[Performance Tests](perf-disk-to-disk.md)] [Internet2 Demo]
 
 
-### Internet2 2017 Technology Exchange: The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
+### Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
 
 
 **Public ssh keys and access to your Google Cloud VM**

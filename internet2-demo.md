@@ -4,9 +4,9 @@
 ### Internet2 2017 Technology Exchange: The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
 
 
-**Setup and FDT Installation**
+**Public ssh keys and access to your Google Cloud VM**
 
-**public ssh keys and access to your Google Cloud VM**
+**Setup and FDT Installation**
 
 ```
 # install java and FDT
@@ -16,15 +16,13 @@ wget https://github.com/fast-data-transfer/fdt/releases/download/untagged-49bd52
 ```
 
 
+**Client-Server file copying**
 
-### Examples
 
-1. To send one file called "local.data" from the local system
+Send one file called "local.data" from the local system
 directory to another computer
 in the "/home/remoteuser/destiantionDir" folder, with default
-parameters, there are two options:
-
-- Client/Server mode
+parameters
 
 First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
 
@@ -44,7 +42,7 @@ OR
 [local computer]$ java -jar fdt.jar -c <remote_address> -d destinationDir ./local.data
 ```
 
-- Secure Copy (SCP) mode
+**Secure Copy (SCP) Mode**
 
 In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
@@ -60,13 +58,13 @@ OR
 
 If the remoteuser parameter is not specified the local user, runningthe fdt command, will beused to login on the remote system
 
-2. To get the content of an entire folder and all its children,
+**Client-Server recursive copying **
+
+To get the content of an entire folder and all its children,
 located in the user's home directory, the -r ( recursive
 mode ) flag will be specified and also -pull to sink the data from the
 server. In the Client/Server mode the access to the server will be
 restricted to the local IP addresses only ( with -f flag ).
-
-- Client/Server mode
 
 Multiple addresses may be specfied using the -f flag using ':'. If theclient's IP address(es) is not specified in the allowed IP addressesthe connection will be closed. In the following command the server isstarted in standalone mode, which means that will continue to run afterthe session will finish. The transfer rate for every client sessionswill be limited to 4 MBytes/s
 
@@ -92,7 +90,7 @@ OR
 [local computer]$ java -jar fdt.jar -pull -r -c <remote_address> -d localDir remoteDir
 ```
 
-- SCP mode
+**Recursive copying in SCP mode**
 
 In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Sameauthentication policies apply as in the first example
 
@@ -106,12 +104,13 @@ OR
 [local computer]$ java -jar fdt.jar -r remoteuser@<remote_address>:remoteDir localDir
 ```
 
-3. To test the network connectivity a transfer here is an example
+
+**Testing network connectivity**
+
+To test the network connectivity a transfer here is an example
 which transfers data from /dev/zero to /dev/null using 10 streams in
 blocking mode, for both the server and the client with 8 MBytes
 buffers. The server will stop after the test is finished
-
-- Client/Server mode
 
 ```
 [remote computer]$ java -jar fdt.jar -bio -bs 8M -f allowedIP -S
@@ -121,7 +120,7 @@ buffers. The server will stop after the test is finished
 [local computer]$ java -jar fdt.jar -c <remote_address> -bio -P 10 -d /dev/null /dev/zero
 ```
 
-- SCP mode
+ SCP mode
 
 ```
 [local computer]$ java -jar fdt.jar -bio -P 10 /dev/zero remoteAddress:/dev/null
@@ -139,7 +138,10 @@ devices and will use a dedicated thread for each device.
 [local computer]$ java -jar fdt.jar -fl ./file_list.txt -c <remote_address> -d /home/remoteuser/destDir
 ```
 
-5. To test the local read/write performance of the local disk the
+
+**Testing local read/write performance**
+
+To test the local read/write performance of the local disk the
 DDCopy may be used.
 
 - The following command will copy the entire partition
@@ -189,7 +191,4 @@ java -jar fdt.jar  -c <source-host> -d /tmp/destination/files -sID <session-ID>
 ```
 java -jar fdt.jar  -c <source-host> -ls /tmp/
 ```
-
-
-
 

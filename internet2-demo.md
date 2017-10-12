@@ -7,7 +7,6 @@
 
 **Access to your Google Cloud VM**
 
-
 Open two windows and ssh into the VMs using the username `fdt` and the password given at the tutorial
 
 ```
@@ -17,6 +16,7 @@ ssh -l fdt <VM2-IP>
 
 **Setup and FDT Installation**
 
+On Both VMs:
 ```
 # install java and FDT
 sudo yum install -y wget
@@ -26,6 +26,7 @@ java -version
 #OpenJDK Runtime Environment (build 1.8.0_144-b01)
 #OpenJDK 64-Bit Server VM (build 25.144-b01, mixed mode)
 wget https://github.com/fast-data-transfer/fdt/releases/download/0.26/fdt.jar
+java -jar fdt.jar -version
 ```
 
 
@@ -39,12 +40,15 @@ parameters
 
 First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
 
+On VM2:
 ```
+hostname --ip-address # use this address below
 [remote computer]$ java -jar fdt.jar -S
 ```
 
 Then,the client will be started on the local system specifying the sourcefile, the remote address (or hostname) where the server was started inthe previous step and the destination directory
 
+On VM1:
 ```
 echo "local.data" > local.data
 for i in `seq 100`; do echo "local data"; done > local.data

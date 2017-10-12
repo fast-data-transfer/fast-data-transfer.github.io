@@ -10,9 +10,13 @@
 
 ```
 # install java and FDT
-yum install -y wget
-yum install -y java-1.8.0-openjdk.x86_64
+sudo yum install -y wget
+sudo yum install -y java-1.8.0-openjdk.x86_64
 wget https://github.com/fast-data-transfer/fdt/releases/download/untagged-49bd5295462c4b0ca004/fdt.jar
+java -version
+#openjdk version "1.8.0_144"
+#OpenJDK Runtime Environment (build 1.8.0_144-b01)
+#OpenJDK 64-Bit Server VM (build 25.144-b01, mixed mode)
 ```
 
 

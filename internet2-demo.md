@@ -15,19 +15,17 @@ ssh -l fdt <VM1-IP>
 ssh -l fdt <VM2-IP>
 ```
 
-On VM1
+On VM1:
 ```
 export SERVER1=$(hostname --ip-address)
 ```
 
-On VM2
+On VM2:
 ```
 export SERVER2=$(hostname --ip-address)
 ```
 
 Export these values on the other VM too, i.e. copy SERVER1 on VMS2 and SERVER2 on VM1. These will be the private IP addresses, not the ones you used above for login into the VMs.
-
-
 
 
 **Setup and FDT Installation**
@@ -73,7 +71,7 @@ _Secure Copy (SCP) Mode_
 
 In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
-on VM1:
+On VM1:
 ```
 [local computer]$ java -jar fdt.jar ./local.data fdt@$SERVER2:/home/fdt/
 ```
@@ -82,37 +80,23 @@ If the remoteuser parameter is not specified the local user, running the fdt com
 
 **Recursive copying**
 
-To get the content of an entire folder and all its children,
-located in the user's home directory, the -r ( recursive
-mode ) flag will be specified and also -pull to sink the data from the
-server. In the Client/Server mode the access to the server will be
-restricted to the local IP addresses only ( with -f flag ).
+To get the content of an entire folder and all its children, located in the user's home directory, we will use the `-r` (recursive mode) flag. Furthermore, the `-pull` flag will be used to sink the data from the server. In the client-server mode, the acces to the server will be restricted to local IP addresses only. This is done with the `-f` flag.
 
-Multiple addresses may be specfied using the -f flag using ':'. If theclient's IP address(es) is not specified in the allowed IP addressesthe connection will be closed. In the following command the server isstarted in standalone mode, which means that will continue to run afterthe session will finish. The transfer rate for every client sessionswill be limited to 4 MBytes/s
+Multiple IP addresses may be specified using the -f flag using ':' separator. If the IP address of the client is not specified in the allowed IP addresses, the connection will be closed. In the following command the server is started in standalone mode, which means that will continue to run after the session will finish. The transfer rate for every client session will be limited to 4 MBytes/s.
 
+On VM2:
 ```
-[remote computer]$ java -jar fdt.jar -f allowedIP1:allowedIP2 -limit 4M
+[remote computer]$ java -jar fdt.jar -f $SERVER1:$SERVER2 --limit 4M
 ```
 
-OR
-
-```
-[remote computer]$ java -jar fdt.jar -f allowedIP1:allowedIP2 -limit 4096K
-```
 
 The command for the local client will be.
 
 ```
-[local computer]$ java -jar fdt.jar -pull -r -c <remote_address>-d /home/localuser/localDir /home/remoteuser/remoteDir
+[local computer]$ java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share  
 ```
 
-OR
-
-```
-[local computer]$ java -jar fdt.jar -pull -r -c <remote_address> -d localDir remoteDir
-```
-
-__Recursive copying in SCP mode__
+_Recursive copying in SCP mode_
 
 In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Sameauthentication policies apply as in the first example
 

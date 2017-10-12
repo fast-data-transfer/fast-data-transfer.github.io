@@ -2,9 +2,8 @@
 
 
 
-<center>
-###Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
-</center>
+
+###<center>Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network</center>
 
 
 **Public ssh keys and access to your Google Cloud VM**

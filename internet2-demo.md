@@ -2,7 +2,9 @@
 
 
 
-####Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
+<center>
+### Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
+</center>
 
 
 **Access to your Google Cloud VM**

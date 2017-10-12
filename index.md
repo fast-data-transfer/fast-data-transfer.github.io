@@ -1,4 +1,4 @@
-[[Home](index.md)]   [[Documentation](doc-fdt-ddcopy.md)]  [[Performance Tests](perf-disk-to-disk.md)]
+[[Home](index.md)]   [[Documentation](doc-fdt-ddcopy.md)]  [[Performance Tests](perf-disk-to-disk.md)] [[Internet2 Demo](internet2-demo.md)]
 
 ### Fast Data Transfer - FDT
 

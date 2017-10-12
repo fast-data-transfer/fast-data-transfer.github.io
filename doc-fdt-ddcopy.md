@@ -1,4 +1,4 @@
-[[Home](index.md)]  [Documentation]  [[Performance Tests](perf-disk-to-disk.md)]
+[[Home](index.md)]  [Documentation]  [[Performance Tests](perf-disk-to-disk.md)] [[Internet2 Demo](internet2-demo.md)]
 
 [FDT & DDCopy]  [[Examples](doc-examples.md)]  [[Security](doc-security.md)]    [[User's Extensions](doc-user-extensions.md)]    [[System Tuning](doc-system-tuning.md)]
 

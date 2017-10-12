@@ -2,11 +2,18 @@
 
 
 
+####Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network
 
-###<center>Internet2 2017 Technology Exchange<br>The Fast Data Transfer Tool: Overcoming Limitations to High Performance Transfers Over the Wide Area Network</center>
+
+**Access to your Google Cloud VM**
 
 
-**Public ssh keys and access to your Google Cloud VM**
+Open two windows and ssh into the VMs using the username `fdt` and the password given at the tutorial
+
+```
+ssh -l fdt <VM1-IP>
+ssh -l fdt <VM2-IP>
+```
 
 **Setup and FDT Installation**
 

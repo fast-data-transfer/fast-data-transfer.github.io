@@ -53,7 +53,7 @@ directory to another computer
 in the "/tmp" folder, with default
 parameters
 
-First,the FDT server needs to be started on the remote system. ( The default settings will be used, which implies the default port, 54321, on both the client and the server ). -S is used to disable the standalone mode, which means that the server will stop after the session will finish.
+First,the FDT server needs to be started on the remote system. (The default settings will be used, which implies the default port, 54321, on both the client and the server). -S is used to disable the standalone mode, which means that the server will stop after the session will finish.
 
 On VM2:
 ```
@@ -69,27 +69,16 @@ for i in `seq 100`; do echo "local data"; done > local.data
 [local computer]$ java -jar fdt.jar -c $SERVER2 -d /tmp ./local.data
 ```
 
-OR
-
-```
-[local computer]$ java -jar fdt.jar -c <remote_address> -d destinationDir ./local.data
-```
-
-__Secure Copy (SCP) Mode__
+_Secure Copy (SCP) Mode_
 
 In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
+on VM1:
 ```
-[local computer]$ java -jar fdt.jar /home/localuser/local.data remoteuser@<remote_address>:/home/remoteuser/destinationDir
-```
-
-OR
-
-```
-[local computer]$ java -jar fdt.jar ./local.data remoteuser@<remote_address>:destinationDir
+[local computer]$ java -jar fdt.jar ./local.data fdt@$SERVER2:/home/fdt/
 ```
 
-If the remoteuser parameter is not specified the local user, runningthe fdt command, will beused to login on the remote system
+If the remoteuser parameter is not specified the local user, running the fdt command, will beused to login on the remote system.
 
 **Recursive copying**
 

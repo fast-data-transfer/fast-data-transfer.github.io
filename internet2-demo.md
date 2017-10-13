@@ -92,23 +92,20 @@ On VM2:
 
 The command for the local client will be.
 
+On VM1
 ```
 [local computer]$ java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share  
 ```
 
 _Recursive copying in SCP mode_
 
-In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Sameauthentication policies apply as in the first example
+In this mode only the order of the parameters will be changed, and `-r` is the only argument that must be added (`-pull` is implicit). The same authentication policies apply.
 
+On VM1:
 ```
-[local computer]$ java -jar fdt.jar -r  remoteuser@<remote_address>:/home/remoteuser/remoteDir /home/localuser/localDir
+[local computer]$ java -jar fdt.jar -r  fdt@$SERVER2:/usr/share ./share
 ```
 
-OR
-
-```
-[local computer]$ java -jar fdt.jar -r remoteuser@<remote_address>:remoteDir localDir
-```
 
 
 **Testing network connectivity**

@@ -46,19 +46,16 @@ java -jar fdt.jar -version
 **Copy a file**
 
 
-Send one file called "local.data" from the local system
-directory to another computer
-in the "/tmp" folder, with default
-parameters
+Send one file called "local.data" from the local system directory to another computer in the "/tmp" folder, with default parameters
 
-First the FDT server needs to be started on the remote system. The default settings will be used, which implies the default port, 54321, on both the client and the server. The -S flag is used to disable the standalone mode, which means that the server will stop after the session will finish.
+First the FDT server needs to be started on the "remote" system (VM2). The default settings will be used, which implies the default port, 54321, on both the client and the server. The -S flag is used to disable the standalone mode, which means that the server will stop after the session will finish.
 
 On VM2:
 ```
 [remote computer]$ java -jar fdt.jar -S
 ```
 
-Then the client will be started on the local system specifying the sourcefile, the remote address (or hostname) where the server was started in the previous step and the destination directory.
+Then the client will be started on the "local" system (VM1) specifying the sourcefile, the remote address (or hostname) where the server was started in the previous step and the destination directory.
 
 On VM1:
 ```

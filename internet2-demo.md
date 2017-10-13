@@ -103,39 +103,40 @@ On VM1:
 [local computer]$ java -jar fdt.jar -r  fdt@$SERVER2:/usr/share ./share
 ```
 
+**Transfer with list of files**
 
+The user can define a list of files (one filename per lin ) to be transferred. FDT will detect if the files are located on multiple devices and will use a dedicated thread for each device.
 
-**Testing network connectivity**
-
-To test the network connectivity a transfer here is an example
-which transfers data from /dev/zero to /dev/null using 10 streams in
-blocking mode, for both the server and the client with 8 MBytes
-buffers. The server will stop after the test is finished
-
-```
-[remote computer]$ java -jar fdt.jar -bio -bs 8M -f allowedIP -S
-```
-
-```
-[local computer]$ java -jar fdt.jar -c <remote_address> -bio -P 10 -d /dev/null /dev/zero
-```
-
- SCP mode
-
-```
-[local computer]$ java -jar fdt.jar -bio -P 10 /dev/zero remoteAddress:/dev/null
-```
-
-4. The user can also define a list of files ( a filename per line )
-to be transfered. FDT will detect if the files are located on multiple
-devices and will use a dedicated thread for each device.
-
+On VM2
 ```
 [remote computer]$ java -jar fdt.jar -S
 ```
 
+ON VM1
 ```
-[local computer]$ java -jar fdt.jar -fl ./file_list.txt -c <remote_address> -d /home/remoteuser/destDir
+[local computer]$ java -jar fdt.jar -fl ./file_list.txt -c <remote_address> -d /home/fdt/files
+```
+
+
+**Testing network connectivity**
+
+To test the network connectivity one can start a transfer of data from /dev/zero on the server (VM2) to /dev/null on the client (VM1) using 10 streams in blocking mode, for both the server and the client with 8 MBytes buffers. The server will stop after the test is finished 
+
+On the VM2 (server):
+```
+[remote computer]$ java -jar fdt.jar -bio -bs 8M -f $SERVER1 -S
+```
+
+On the VM1 (client):
+```
+[local computer]$ java -jar fdt.jar -c $SERVER2 -bio -P 10 -d /dev/null /dev/zero
+```
+
+ _SCP mode_
+
+On VM1:
+```
+[local computer]$ java -jar fdt.jar -bio -P 10 /dev/zero $SERVER2:/dev/null
 ```
 
 
@@ -167,7 +168,7 @@ OR
 [local computer]$ java -cp fdt.jar lia.util.net.common.DDCopy  if=/dev/zero of=/home/user/1GBTestFile bs=1M bn=10 count=100 flags=NOSYNC
 ```
 
-- Launching FDT as Agent example:
+**Launching FDT as Agent**
 
 ```
 java -jar fdt.jar -tp <transfer,ports,separated,by,comma> -p <portNo> -agent

@@ -3,7 +3,7 @@
 [Disk to Disk]   [[Memory to Memory](perf-memory-to-memory.md)]   [[SC06](perf-sc06.md)]   [[SC08](perf-sc08.md)]   [[SC09](perf-sc09.md)]
 
 ### FDT Disk To Disk I/O Performance over WAN
- 
+
 
 **1. Disk Servers with hardware RAID controllers**
 This performance test was done using two disk servers between CERN and Caltech (RTT ~ 170 ms). Each system used a 10Gb/s network card (The system at Caltech has a Myricom card and the system at CERN has a Neterion card)
@@ -38,10 +38,10 @@ Figure 3. The CPU utilization for the receiving server
 
 If we used only one RAID controller in the data transfer on each server the total transfer rate in shown in Figure 4. In this case the mean total throughput is ~ 2.6 Gb/s or 325 MB/s.
 
-![Figure 4. The total network throughput for a Disk to disk transfer between CERN - Caltech, when only 
+![Figure 4. The total network throughput for a Disk to disk transfer between CERN - Caltech, when only
 one RAID controller was used on both servers](/img/figure4.png)
 
-Figure 4. The total network throughput for a Disk to disk transfer between CERN - Caltech, when only 
+Figure 4. The total network throughput for a Disk to disk transfer between CERN - Caltech, when only
 one RAID controller was used on both servers
 
 ##### 2. Simple Servers

@@ -11,14 +11,14 @@ parameters, there are two options:
 
 - Client/Server mode
 
-First,the FDT server needs to be started on the remote system. ( The defaultsettings will be used, which implies the default port, 54321, on boththeclient and the server ). -S is used to disable the standalone mode,which means that the server will stop after the session will finish
+First, the FDT server needs to be started on the remote system. ( The default settings will be used, which implies the default port, 54321, on both the client and the server ). `-S` is used to disable the standalone mode, which means that the server will stop after the session will finish
 
 ```
 [remote computer]$ java -jar fdt.jar -S
 ```
 
-Then,the client will be started on the local system specifying the sourcefile, the remote address (or hostname) where the server was started inthe previous step and the destination directory
-        
+Then,the client will be started on the local system specifying the source file, the remote address (or hostname) where the server was started in the previous step and the destination directory
+
 ```
 [local computer]$ java -jar fdt.jar -c <remote_address> -d /home/remoteuser/destinationDir /home/localuser/local.data
 ```
@@ -31,7 +31,7 @@ OR
 
 - Secure Copy (SCP) mode
 
-In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
+In this mode the server will be started on the remote system automatically by the local FDT client using SSH.
 
 ```
 [local computer]$ java -jar fdt.jar /home/localuser/local.data remoteuser@<remote_address>:/home/remoteuser/destinationDir
@@ -43,7 +43,7 @@ OR
 [local computer]$ java -jar fdt.jar ./local.data remoteuser@<remote_address>:destinationDir
 ```
 
-If the remoteuser parameter is not specified the local user, runningthe fdt command, will beused to login on the remote system
+If the remote user parameter is not specified the local user, running the fdt command, will be used to login on the remote system.
 
 2. To get the content of an entire folder and all its children,
 located in the user's home directory, the -r ( recursive
@@ -53,7 +53,7 @@ restricted to the local IP addresses only ( with -f flag ).
 
 - Client/Server mode
 
-Multiple addresses may be specfied using the -f flag using ':'. If theclient's IP address(es) is not specified in the allowed IP addressesthe connection will be closed. In the following command the server isstarted in standalone mode, which means that will continue to run afterthe session will finish. The transfer rate for every client sessionswill be limited to 4 MBytes/s
+Multiple addresses may be specfied using the -f flag using ':'. If the client's IP address(es) is not specified in the allowed IP addresses the connection will be closed. In the following command the server is started in standalone mode, which means that will continue to run after the session will finish. The transfer rate for every client sessions will be limited to 4 MBytes/s.
 
 ```
 [remote computer]$ java -jar fdt.jar -f allowedIP1:allowedIP2 -limit 4M
@@ -68,7 +68,7 @@ OR
 The command for the local client will be.
 
 ```
-[local computer]$ java -jar fdt.jar -pull -r -c <remote_address>-d /home/localuser/localDir /home/remoteuser/remoteDir
+[local computer]$ java -jar fdt.jar -pull -r -c <remote_address> -d /home/localuser/localDir /home/remoteuser/remoteDir
 ```
 
 OR
@@ -79,7 +79,7 @@ OR
 
 - SCP mode
 
-In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Sameauthentication policies apply as in the first example
+In this mode only the order of the parameters will be changed, and -ris the only argument that must be added ( -pull is implicit ). Same authentication policies apply as in the first example
 
 ```
 [local computer]$ java -jar fdt.jar -r  remoteuser@<remote_address>:/home/remoteuser/remoteDir /home/localuser/localDir
@@ -161,7 +161,7 @@ java -jar fdt.jar -tp <transfer,ports,separated,by,comma> -p <portNo> -agent
 ```
 java -jar fdt.jar -dIP <destination-ip> -dp <destination-port> -sIP <source-ip> -p <source-port> -d /tmp/destination/files -fl /tmp/file-list-on-source.txt -coord
 ```
-- Retrieving session log file. 
+- Retrieving session log file.
 
 To retrieve session log file user needs to provide at least these parameters:
 

@@ -41,12 +41,19 @@ java -jar fdt.jar -version
 ```
 
 
-**Copy a file**
+**Getting help**
+The `-help` flag will print out all flags with descriptions.
+```
+java -jar fdt.jar -help
+java -jar fdt.jar -help >& help.txt
+less help.txt
+```
 
+**Copy a file**
 
 Send one file called "local.data" from the local system directory to another computer in the "/tmp" folder, with default parameters
 
-First the FDT server needs to be started on the "remote" system (SERVER2). The default settings will be used, which implies the default port, 54321, on both the client and the server. The -S flag is used to disable the standalone mode, which means that the server will stop after the session will finish.
+First the FDT server needs to be started on the "remote" system (SERVER2). The default settings will be used, which implies the default port, 54321, on both the client and the server. The `-S` flag is used to disable the standalone mode. When using this flag, the server will stop after the copy session will finish.
 
 On SERVER2:
 ```
@@ -87,9 +94,9 @@ java -jar fdt.jar -f $SERVER1:$SERVER2
 
 The command for the local client will be.
 
-On VM1
+On SERVER1
 ```
-[local computer]$ java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share  
+java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share  
 ```
 
 _Recursive copying in SCP mode_

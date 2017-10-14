@@ -8,37 +8,35 @@
 
 **Access to your Google Cloud VMs**
 
-Open two windows and ssh into the VMs using the username `fdt` and the IPs and password given at the tutorial.
+Open two windows and ssh into the servers using the username `fdt` and the IPs and password given at the tutorial.
 
 ```
-ssh -l fdt <VM1-IP>
-ssh -l fdt <VM2-IP>
+ssh -l fdt <SERVER1-PUBLIC>
+ssh -l fdt <SERVER2-PUBLIC>
 ```
 
-On VM1:
+On SERVER1:
 ```
 export SERVER1=$(hostname --ip-address)
 ```
 
-On VM2:
+On SERVER2:
 ```
 export SERVER2=$(hostname --ip-address)
 ```
 
-Export these values on the other VM too, i.e. copy SERVER1 on VMS2 and SERVER2 on VM1. These will be the private IP addresses, not the ones you used above for login into the VMs.
+Export these values on the other server too. These are the private IP addresses, not the ones you used above for login into the VMs.
 
 
 **Setup and FDT Installation**
 
-On Both VMs:
+On Both servers:
 ```
 # install java and FDT
-sudo yum install -y wget
-
 sudo yum install -y java-1.8.0-openjdk.x86_64
 java -version
 
-wget https://github.com/fast-data-transfer/fdt/releases/download/0.26/fdt.jar
+wget https://github.com/fast-data-transfer/fdt/releases/download/0.25.1/fdt.jar
 java -jar fdt.jar -version
 ```
 
@@ -48,42 +46,42 @@ java -jar fdt.jar -version
 
 Send one file called "local.data" from the local system directory to another computer in the "/tmp" folder, with default parameters
 
-First the FDT server needs to be started on the "remote" system (VM2). The default settings will be used, which implies the default port, 54321, on both the client and the server. The -S flag is used to disable the standalone mode, which means that the server will stop after the session will finish.
+First the FDT server needs to be started on the "remote" system (SERVER2). The default settings will be used, which implies the default port, 54321, on both the client and the server. The -S flag is used to disable the standalone mode, which means that the server will stop after the session will finish.
 
-On VM2:
+On SERVER2:
 ```
-[remote computer]$ java -jar fdt.jar -S
+java -jar fdt.jar -S
 ```
 
-Then the client will be started on the "local" system (VM1) specifying the sourcefile, the remote address (or hostname) where the server was started in the previous step and the destination directory.
+Then the client will be started on the "local" system (SERVER1) specifying the sourcefile, the remote address (or hostname) where the server was started in the previous step and the destination directory.
 
-On VM1:
+On SERVER1:
 ```
 # create a dummy file for the transfer
-for i in `seq 100`; do echo "local data"; done > local.data
-[local computer]$ java -jar fdt.jar -c $SERVER2 -d /tmp ./local.data
+for i in `seq 100`; do echo "$i local data"; done > local.data
+java -jar fdt.jar -c $SERVER2 -d /tmp ./local.data
 ```
 
 _Secure Copy (SCP) Mode_
 
 In this mode the server will be started on the remote systemautomatically by the local FDT client using SSH.
 
-On VM1:
+On SERVER1:
 ```
-[local computer]$ java -jar fdt.jar ./local.data fdt@$SERVER2:/home/fdt/
+java -jar fdt.jar ./local.data fdt@$SERVER2:/home/fdt/
 ```
 
-If the remoteuser parameter is not specified the local user, running the fdt command, will beused to login on the remote system.
+If the remoteuser parameter is not specified the local user, running the fdt command, will be used to login on the remote system.
 
 **Recursive copying**
 
-To get the content of an entire folder and all its children, located in the user's home directory, we will use the `-r` (recursive mode) flag. Furthermore, the `-pull` flag will be used to sink the data from the server. In the client-server mode, the acces to the server will be restricted to local IP addresses only. This is done with the `-f` flag.
+To get the content of an entire folder and all its children, located in the home directory of the user, we will use the `-r` (recursive mode) flag. Furthermore, the `-pull` flag will be used to pull the data from the server. In the client-server mode, the acces to the server will be restricted to some IP addresses only. This is done with the `-f` flag.
 
-Multiple IP addresses may be specified using the -f flag using ':' separator. If the IP address of the client is not specified in the allowed IP addresses, the connection will be closed. In the following command the server is started in standalone mode, which means that will continue to run after the session will finish. The transfer rate for every client session will be limited to 4 MBytes/s.
+Multiple IP addresses may be specified using the -f flag using ':' separator. If the IP address of the client is not specified in the allowed IP addresses, the connection will be closed. In the following command the server is started in standalone mode, which means that will continue to run after the session will finish. The transfer rate for every client session can be limited on the server with the `--limit` flag (``--limit 4M`` for 4Mbps)
 
-On VM2:
+On SERVER2:
 ```
-[remote computer]$ java -jar fdt.jar -f $SERVER1:$SERVER2 --limit 4M
+java -jar fdt.jar -f $SERVER1:$SERVER2
 ```
 
 

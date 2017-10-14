@@ -24,7 +24,7 @@ We suggest to use newer linux distributions, or if this is not possible, update 
 ```net.ipv4.tcp_moderate_rcvbuf = 1```
 
 After adding them just run the following commabd as root:
-    
+
 ```#sysctl -p /etc/sysctl.conf```
 
 The settings above will set a maximum of 8 MBytes buffers.

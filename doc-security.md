@@ -22,10 +22,10 @@ In this mode the server activates a simple IP-based firewall where each source I
 By default FDT starts allowing clients from any destination.
 
 To enable this mode, pass the "-f" option when starting FDT server:
--f <allowedIPsList> , where allowedIPsList: A list of IP addresses allowed to connect to the server. 
+-f <allowedIPsList> , where allowedIPsList: A list of IP addresses allowed to connect to the server.
 Multiple IP addresses may be separated by ':'.
 You can use CIDR notation to specify an entire subnet.
-    
+
 `However, please note that this mode does not enable any privacy or confidentiality on client-server control channel and it may be subject to source IP spoofing.`
 
 IP filtering can be used together with other authentication schemes.
@@ -129,7 +129,7 @@ The clients connecting to the server are authenticated using the current environ
     **default location:** /etc/grid-security/certificates
     override with X509_CERT_DIR environment variable
 By default, the authorization of users is based on grid-mapfile file available in the current Globus installation:
-    **default** /etc/grid-security/grid-mapfile or 
+    **default** /etc/grid-security/grid-mapfile or
    Override with GRIDMAP java property or environment variable
 Other authorization modules may be plugged-in in the FDT server by specifying : -Dgsi.authz.Authorization=customAuthzPluginClass
 

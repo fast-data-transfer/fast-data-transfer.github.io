@@ -161,7 +161,7 @@ java -jar fdt.jar -tp <transfer,ports,separated,by,comma> -p <portNo> -agent
 ```
 java -jar fdt.jar -dIP <destination-ip> -dp <destination-port> -sIP <source-ip> -p <source-port> -d /tmp/destination/files -fl /tmp/file-list-on-source.txt -coord
 ```
-- Retrieving session log file. 
+- Retrieving session log file.
 
 To retrieve session log file user needs to provide at least these parameters:
 

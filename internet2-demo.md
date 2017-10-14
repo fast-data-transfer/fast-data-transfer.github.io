@@ -91,7 +91,7 @@ The command for the local client will be.
 
 On VM1
 ```
-[local computer]$ java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share  
+[local computer]$ java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share
 ```
 
 _Recursive copying in SCP mode_
@@ -120,7 +120,7 @@ ON VM1
 
 **Testing network connectivity**
 
-To test the network connectivity one can start a transfer of data from /dev/zero on the server (VM2) to /dev/null on the client (VM1) using 10 streams in blocking mode, for both the server and the client with 8 MBytes buffers. The server will stop after the test is finished 
+To test the network connectivity one can start a transfer of data from /dev/zero on the server (VM2) to /dev/null on the client (VM1) using 10 streams in blocking mode, for both the server and the client with 8 MBytes buffers. The server will stop after the test is finished
 
 On the VM2 (server):
 ```
@@ -179,7 +179,7 @@ java -jar fdt.jar -tp <transfer,ports,separated,by,comma> -p <portNo> -agent
 ```
 java -jar fdt.jar -dIP <destination-ip> -dp <destination-port> -sIP <source-ip> -p <source-port> -d /tmp/destination/files -fl /tmp/file-list-on-source.txt -coord
 ```
-- Retrieving session log file. 
+- Retrieving session log file.
 
 To retrieve session log file user needs to provide at least these parameters:
 

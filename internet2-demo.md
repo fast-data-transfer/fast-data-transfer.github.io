@@ -99,6 +99,25 @@ On SERVER1
 java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share  
 ```
 
+_Recursive copying with more read threads_
+
+```
+[SERVER2] java -jar fdt.jar -f $SERVER1:$SERVER2 -rCount 100 -wCount 100
+[SERVER1] java -jar fdt.jar -pull -r -rCount 100 -c $SERVER2 -d ./share /usr/share
+```
+
+P.S. there is a bug on writing a directory with a subdirectory structure with multiple threads.
+
+_Recursive copying with more streams_
+
+```
+[SERVER2] java -jar fdt.jar -f $SERVER1:$SERVER2 -rCount 100 -wCount 100 -P 10
+[SERVER1] java -jar fdt.jar -pull -r -rCount 100 -P10 -c $SERVER2 -d ./share /usr/share
+```
+
+P.S. you can run out of memory when using many threads and streams. Usually the error message from FDT/Java is pretty obvious in this case.
+
+
 _Recursive copying in SCP mode_
 
 In this mode only the order of the parameters will be changed, and `-r` is the only argument that must be added (`-pull` is implicit). The same authentication policies apply.

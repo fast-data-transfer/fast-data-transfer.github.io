@@ -5,10 +5,10 @@
 ### Internet2 2017 Technology Exchange: The Fast Data Transfer Tool
 
 
-This tutorial took place on October 15, 2017 a the Internet2 2017 Technology exchange meeting in San Francisco. The use of virtual machines for the tutorial was made possible through the support of Google Cloud for Higher Education & Research. We used the google cloud SDK (gcloud) for instantiating and customizing the virtual machines.
+This tutorial took place on October 15, 2017 at the Internet2 2017 Technology exchange meeting in San Francisco. The use of virtual machines for the tutorial was made possible through the support of Google Cloud for Higher Education & Research. We used the google cloud SDK (gcloud) for instantiating and customizing the virtual machines.
 
 
-**Access to your Google Cloud VMs**
+**Access to the Google Cloud virtual machines**
 
 Open two windows and ssh into the servers using the username `fdt` and the IPs and password given at the tutorial.
 

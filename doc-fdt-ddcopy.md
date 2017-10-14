@@ -22,7 +22,7 @@ To retrieve list of files on custom path there is a custom mode which can be use
 
 The OPTIONS currently supported may be server or client specific, or may be used in both modes.
 
-**Common  options used for both server and client :**
+**Common options used for both server and client :**
 
 **-gsi** enables GSI authentication scheme in FDT. When started in server mode the FDT will open two TCP ports: one for GSI authentication and the other one for data channels
 
@@ -44,7 +44,7 @@ The OPTIONS currently supported may be server or client specific, or may be used
 
 **-printStats** Various statistics about buffer pools, sessions, etc will be printed
 
-**-v** Verbose. Multiple 'v'-s (up to three) may be used to increment the verbosity level.Maximum level is three (-vvv) which corresponds to Level.FINEST for the standard Java logging system used by FDT.
+**-v** Verbose. Multiple 'v'-s (up to three) may be used to increment the verbosity level. Maximum level is three (-vvv) which corresponds to Level.FINEST for the standard Java logging system used by FDT.
 
 **-u, -update** Update. If a newer version of fdt.jar is available on the update server it will update the local copy 
 
@@ -60,7 +60,7 @@ The OPTIONS currently supported may be server or client specific, or may be used
 
 **-c \<host>** connect to the specified host. If this parameter is missing the FDT will become server
 
-**-gsissh** used in the Secure Copy Mode to specify GSI authentication instead of normal SSH authentication scheme. The remote sshd servere must support GSI authentication. 
+**-gsissh** used in the Secure Copy Mode to specify GSI authentication instead of normal SSH authentication scheme. The remote sshd server must support GSI authentication. 
 
 **-d \<dstDir>** The destination directory used to copy files. 
 
@@ -76,11 +76,11 @@ The OPTIONS currently supported may be server or client specific, or may be used
 
 **Common options used for FDT Agent mode :**
 
-Agent can use booth Server and Client options too, because at any time Agent can be Server or Client
+Agent can use both Server and Client options too, because at any time Agent can be Server or Client
 
 **-p \<portNo>** specifies the TCP port to be used (for the server it is the port used to listen on; for the client the port to connect to). The default port is 54321.
 
-**-tp \<transfer-ports>** specifies the TCP port lis to be used for transfer sessions. Ports are separated with comma.
+**-tp \<transfer-ports>** specifies the TCP port list to be used for transfer sessions. Ports are separated with comma.
 
 **-agent** Option for FDT to run as agent.
 

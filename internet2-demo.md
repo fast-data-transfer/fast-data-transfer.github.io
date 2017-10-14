@@ -41,6 +41,7 @@ java -jar fdt.jar -version
 
 
 **Getting help**
+
 The `-help` flag will print out all flags with descriptions.
 ```
 java -jar fdt.jar -help

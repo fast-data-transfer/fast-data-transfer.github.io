@@ -32,7 +32,7 @@ Export these values on the other server too. These are the private IP addresses,
 _Note!_: If your session gets disconnected you will need to reset these shell variables or use the IPs directly in the examples below.
 
 
-**Setup and FDT Installation**
+**Installation of Java and FDT**
 
 On Both servers:
 ```

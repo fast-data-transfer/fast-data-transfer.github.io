@@ -1,7 +1,6 @@
 [[Home](index.md)]  [[Documentation](doc-fdt-ddcopy.md)]  [[Performance Tests](perf-disk-to-disk.md)] [Internet2 Demo]
 
 
-
 ### Internet2 2017 Technology Exchange: The Fast Data Transfer Tool
 
 
@@ -266,4 +265,38 @@ java -jar fdt.jar  -c <source-host> -d /tmp/destination/files -sID <session-ID>
 ```
 java -jar fdt.jar  -c <source-host> -ls /tmp/
 ```
+
+**FDT Plugin**
+
+On both servers:
+```
+# Install devel package
+sudo yum install -y java-1.8.0-openjdk-devel.x86_64
+# Get Post and Pre ZipFilter
+wget https://raw.githubusercontent.com/fast-data-transfer/fdt-plugins/master/ZipFilter/PreZipFilter.java
+wget https://raw.githubusercontent.com/fast-data-transfer/fdt-plugins/master/ZipFilter/PostZipFilter.java
+# Build and append to fdt.jar
+javac -classpath fdt.jar *.java
+```
+
+On SERVER1:
+```
+mkdir zipTest && cd zipTest
+for i in `seq 100`; do
+  for j in `seq 1000`; do echo "local data"; done > $i.data
+done
+du -sb  ## REMEMBER THIS NUMBER!
+cd ../
+```
+
+On SERVER2:
+```
+java -classpath fdt.jar:. lia.util.net.copy.FDT -postFilters PostZipFilter
+```
+
+On SERVER1:
+```
+java -classpath fdt.jar:. lia.util.net.copy.FDT -preFilters PreZipFilter -c $SERVER2 -d /tmp/ zipTest/*
+```
+
 

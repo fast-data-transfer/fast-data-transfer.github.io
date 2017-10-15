@@ -5,7 +5,11 @@
 ### Internet2 2017 Technology Exchange: The Fast Data Transfer Tool
 
 
-This tutorial took place on October 15, 2017 at the Internet2 2017 Technology exchange meeting in San Francisco. The use of virtual machines for the tutorial was made possible through the support of Google Cloud for Higher Education & Research. We used the google cloud SDK (gcloud) for instantiating and customizing the virtual machines.
+This tutorial took place on October 15, 2017 at the Internet2 2017 Technology exchange meeting in San Francisco. The use of virtual machines for the tutorial was made possible through the support of Google Cloud for Higher Education & Research.
+
+We used the google cloud SDK (gcloud) for instantiating and customizing the virtual machines. The google cloud compute instance used for this tutorial is `n1-standard-4`. It has 15 GB of memory and 4 VCPUs.
+
+Google currently provides with up to 2 Gbps per VCPU (hyperthread) capped at 16 Gbps per VM. We will test this in the tutorial. Google is looking for feedback from groups who would like to do really high throughput networking (40+ per VM). Feel free to let us know or the google team in this Internet2 meeting.
 
 
 **Access to the Google Cloud virtual machines**
@@ -106,8 +110,10 @@ java -jar fdt.jar -pull -r -c $SERVER2 -d ./share /usr/share
 _Recursive copying with more read threads_
 
 ```
-[SERVER2] java -jar fdt.jar -f $SERVER1:$SERVER2 -rCount 100 -wCount 100
-[SERVER1] java -jar fdt.jar -pull -r -rCount 100 -c $SERVER2 -d ./share /usr/share
+# SERVER2
+java -jar fdt.jar -f $SERVER1:$SERVER2 -rCount 100 -wCount 100
+# SERVER1
+java -jar fdt.jar -pull -r -rCount 100 -c $SERVER2 -d ./share /usr/share
 ```
 
 P.S. there is a bug on writing a directory with a subdirectory structure with multiple threads.
@@ -115,8 +121,10 @@ P.S. there is a bug on writing a directory with a subdirectory structure with mu
 _Recursive copying with more streams_
 
 ```
-[SERVER2] java -jar fdt.jar -f $SERVER1:$SERVER2 -rCount 100 -wCount 100 -P 10
-[SERVER1] java -jar fdt.jar -pull -r -rCount 100 -P10 -c $SERVER2 -d ./share /usr/share
+# SERVER2
+java -jar fdt.jar -f $SERVER1:$SERVER2 -rCount 100 -wCount 100 -P 10
+# SERVER1
+java -jar fdt.jar -pull -r -rCount 100 -P10 -c $SERVER2 -d ./share /usr/share
 ```
 
 P.S. you can run out of memory when using many threads and streams. Usually the error message from FDT/Java is pretty obvious in this case.
@@ -126,23 +134,23 @@ _Recursive copying in SCP mode_
 
 In this mode only the order of the parameters will be changed, and `-r` is the only argument that must be added (`-pull` is implicit). The same authentication policies apply.
 
-On VM1:
+On SERVER1:
 ```
-[local computer]$ java -jar fdt.jar -r  fdt@$SERVER2:/usr/share ./share
+java -jar fdt.jar -r  fdt@$SERVER2:/usr/share ./share
 ```
 
 **Transfer with list of files**
 
 The user can define a list of files (one filename per lin ) to be transferred. FDT will detect if the files are located on multiple devices and will use a dedicated thread for each device.
 
-On VM2
+On SERVER2
 ```
-[remote computer]$ java -jar fdt.jar -S
+java -jar fdt.jar -S
 ```
 
-ON VM1
+ON SERVER1
 ```
-[local computer]$ java -jar fdt.jar -fl ./file_list.txt -c <remote_address> -d /home/fdt/files
+java -jar fdt.jar -fl ./file_list.txt -c <remote_address> -d /home/fdt/files
 ```
 
 

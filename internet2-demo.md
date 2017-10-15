@@ -190,7 +190,7 @@ java -jar fdt.jar -fl ./file_list.txt -c $SERVER2 -d /home/fdt/
 ```
 
 
-**Testing network connectivity**
+**Test network connectivity**
 
 To test the network connectivity one can start a transfer of data from /dev/zero on the server (SERVER1) to /dev/null on the client (SERVER2) using 10 streams in blocking mode, for both the server and the client with 8 MBytes buffers. The server will stop after the test is finished.
 
@@ -223,7 +223,7 @@ java -jar fdt.jar -bio -P 10 /dev/zero fdt@$SERVER2:/dev/null
 ```
 
 
-**Testing local read/write performance**
+**Test local read/write performance**
 
 DDCopy can be user to test the local read/write performance of local disks.
 
@@ -248,7 +248,7 @@ On SERVER2:
 java -cp fdt.jar lia.util.net.common.DDCopy  if=/dev/zero of=/home/fdt/1GBTestFile bs=1M bn=10 count=100 flags=NOSYNC
 ```
 
-**Launching FDT as Agent**
+**Launch FDT as Agent**
 
 ```
 java -jar fdt.jar -tp <transfer,ports,separated,by,comma> -p <portNo> -agent

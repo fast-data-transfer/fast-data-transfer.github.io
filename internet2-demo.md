@@ -48,21 +48,28 @@ ssh -l fdt <SERVER2-PUBLIC>
 
 You can check the instance capability using any standard linux tools, for example `htop`.
 
-Save the prive IP of the servers in shell variables and export on both servers.
+Save the private IP of the servers in shell variables and export on both servers.
 
 On SERVER1:
 ```
 export SERVER1=$(hostname --ip-address)
+export SERVER2=<server2 ip from below>
 ```
 
 On SERVER2:
 ```
 export SERVER2=$(hostname --ip-address)
+export SERVER1=<server1 ip from below>
 ```
 
 Export these values on the other server too. These are the private IP addresses, not the ones you used above for login into the VMs.
 
 _Note!_: If your session gets disconnected you will need to reset these shell variables or use the IPs directly in the examples below.
+
+Check that the SERVER1 and SERVER2 are set on both servers.
+```
+echo $SERVER{1,2}
+```
 
 
 **Installation of Java and FDT**
@@ -281,6 +288,9 @@ FDT allows to load user defined classes for Pre- and Post-Processing of file tra
 The user can define its own syntax for managing files on different storage systems. The implementation for the Pre/Post Processing interfaces allows the user to define the mechanism to perform local staging or to move the transfered files to a storage system after they are transferred by FDT. The two procedures act as filters for the source and destination fields in the FDT syntax.
 
 In the plugin shown below, the files will be first zipped in <filename>.zip by the PreZipFilter and their names will be changed in the ProcessorInfo and returned to the FDT client. Then <filename>.zip will be transferred to the destination where the PostZipFilter will uzip it and delete the zip file.
+
+https://github.com/fast-data-transfer/fdt-plugins/tree/master/ZipFilter
+
 
 On both servers:
 ```

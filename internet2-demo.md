@@ -21,7 +21,7 @@ Twitter:
 
 Developer Team:
 - Justas Balcas, jbalcas@caltech.edu
-- Raimondas sirvinskas@cern.ch, raimondas.sirvinskas@cern.ch, www.linkedin.com/in/rsirvins
+- Raimondas Sirvinskas, raimondas.sirvinskas@cern.ch, www.linkedin.com/in/rsirvins
 
 
 **Setup**

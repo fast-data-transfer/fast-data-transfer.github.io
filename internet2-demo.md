@@ -7,6 +7,25 @@
 
 Tutorial given on October 15, 2017 at the Internet2 2017 Technology exchange meeting in San Francisco. The use of virtual machines for the tutorial was made possible through the support of Google Cloud for Higher Education & Research.
 
+**FDT Pointers**
+
+Github:
+- https://github.com/fast-data-transfer
+- support-fdt@monalisa.cern.ch
+
+Email:
+- support-fdt@monalisa.cern.ch
+
+Twitter:
+- @fastdt
+
+Developer Team:
+- Justas Balcas, jbalcas@caltech.edu
+- Raimondas sirvinskas@cern.ch, raimondas.sirvinskas@cern.ch, www.linkedin.com/in/rsirvins
+
+
+**Setup**
+
 We used the google cloud SDK (gcloud) for instantiating and customizing the virtual machines. The google cloud compute instance used for this tutorial is `n1-standard-4`. It has 15 GB of memory and 4 VCPUs. We used `--image-family=centos-7` and  `--image-project=centos-cloud`.
 
 Google currently provides network connectivity of up to 2 Gbps per VCPU (hyperthread) with maximum 16 Gbps per VM. We will test this in the tutorial for our instances. Google is looking for feedback from groups who would like to do really high throughput networking (40+ per VM). Feel free to let us know or the google team in this Internet2 meeting.

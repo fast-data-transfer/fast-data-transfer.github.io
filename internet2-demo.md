@@ -69,9 +69,8 @@ Then the client will be started on the "local" system (SERVER1) specifying the s
 
 On SERVER1:
 ```
-# create a dummy file for the transfer
-for i in `seq 100`; do echo "$i local data"; done > local.data
-java -jar fdt.jar -c $SERVER2 -d /tmp ./local.data
+for i in `seq 100`; do echo "$i local data"; done > local.data  # dummy file
+java -jar fdt.jar -c $SERVER2 -d /tmp ./local.data              # the transfer
 ```
 
 _Secure Copy (SCP) Mode_

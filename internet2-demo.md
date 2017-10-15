@@ -118,7 +118,7 @@ java -jar fdt.jar ./local.data fdt@$SERVER2:/home/fdt/
 
 If the remoteuser parameter is not specified the local user, running the fdt command, will be used to login on the remote system.
 
-**Recursive copying**
+**Recursive copy**
 
 To get the content of an entire folder and all its children, located in the home directory of the user, we will use the `-r` (recursive mode) flag. Furthermore, the `-pull` flag will be used to pull the data from the server. In the client-server mode, the acces to the server will be restricted to some IP addresses only. This is done with the `-f` flag.
 

@@ -172,40 +172,48 @@ On SERVER1 (client):
 java -jar fdt.jar -c $SERVER2 -bio -P 10 -d /dev/null /dev/zero
 ```
 
- _SCP mode_
+_Nettest_
 
-On VM1:
+More recently we introduced a simpler way to do this with the `-nettest` flag.
+
 ```
-[local computer]$ java -jar fdt.jar -bio -P 10 /dev/zero $SERVER2:/dev/null
+# SERVER2
+java -jar fdt.jar -f $SERVER1 -S
+# SERVER1
+java -jar fdt.jar -c $SERVER2 -nettest
+```
+
+_SCP mode_
+
+On SERVER1:
+```
+java -jar fdt.jar -bio -P 10 /dev/zero fdt@$SERVER2:/dev/null
 ```
 
 
 **Testing local read/write performance**
 
-To test the local read/write performance of the local disk the
-DDCopy may be used.
+DDCopy can be user to test the local read/write performance of local disks.
 
-- The following command will copy the entire partition
-/dev/dsk/c0d1p1 to /dev/null reporting every 2 seconds ( the default )
-the I/O speed
+One can test the read speed with the following command. It copies the entire partition /dev/sda1 to /dev/null reporting by default every 2 seconds the I/O speed. The `sudo` is needed here because the fdt user does not have the permissions to read the device.
 
+On SERVER1:
 ```
-[local computer]$ java -cp fdt.jar lia.util.net.common.DDCopy if=/dev/dsk/c0d1p1 of=/dev/null
+sudo java -cp fdt.jar lia.util.net.common.DDCopy if=/dev/sda1 of=/dev/null
 ```
 
-- To test the write speed of the file system using a 1GB file
-read from /dev/zero the following command may be used. The operating
-system will sync() the data to the disk. The data will be read/write
-using 10MB buffers
+To test the write speed of the file system we will use a 1GB file read from /dev/zero. The operating system will sync() the data to the disk. The data are read and written using 10MB buffers.
 
+On SERVER1:
 ```
-[local computer]$ java -cp fdt.jar lia.util.net.common.DDCopy  if=/dev/zero of=/home/user/1GBTestFile bs=10M count=100 flags=NOSYNC
+java -cp fdt.jar lia.util.net.common.DDCopy  if=/dev/zero of=/home/fdt/1GBTestFile bs=10M count=100 flags=NOSYNC
 ```
 
 OR
 
+On SERVER2:
 ```
-[local computer]$ java -cp fdt.jar lia.util.net.common.DDCopy  if=/dev/zero of=/home/user/1GBTestFile bs=1M bn=10 count=100 flags=NOSYNC
+java -cp fdt.jar lia.util.net.common.DDCopy  if=/dev/zero of=/home/fdt/1GBTestFile bs=1M bn=10 count=100 flags=NOSYNC
 ```
 
 **Launching FDT as Agent**

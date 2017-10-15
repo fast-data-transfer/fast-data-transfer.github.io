@@ -29,7 +29,7 @@ export SERVER2=$(hostname --ip-address)
 
 Export these values on the other server too. These are the private IP addresses, not the ones you used above for login into the VMs.
 
-<font color=red>Note!</font>: If your session gets disconnected you will need to reset these shell variables or use the IPs directly in the examples below.
+_Note!_: If your session gets disconnected you will need to reset these shell variables or use the IPs directly in the examples below.
 
 
 **Setup and FDT Installation**

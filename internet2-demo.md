@@ -44,10 +44,11 @@ _Note!_: If your session gets disconnected you will need to reset these shell va
 
 On Both servers:
 ```
-# install java and FDT
+# install java
 sudo yum install -y java-1.8.0-openjdk.x86_64
 java -version
 
+# get FDT
 wget https://github.com/fast-data-transfer/fdt/releases/download/0.25.1/fdt.jar
 java -jar fdt.jar -version
 ```

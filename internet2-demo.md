@@ -166,7 +166,9 @@ java -jar fdt.jar -r  fdt@$SERVER2:/usr/share ./share
 
 **Transfer with list of files**
 
-The user can define a list of files (one filename per lin ) to be transferred. FDT will detect if the files are located on multiple devices and will use a dedicated thread for each device.
+For some fields of science datasets are described as a list of files with some additional metadata, hence this example.
+
+The user can define a list of files (one filename per line) to be transferred. FDT will detect if the files are located on multiple devices and will use a dedicated thread for each device.
 
 On SERVER2
 ```

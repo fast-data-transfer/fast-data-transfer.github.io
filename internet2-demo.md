@@ -10,7 +10,6 @@ Tutorial given on October 15, 2017 at the Internet2 2017 Technology exchange mee
 
 Github:
 - [github.com/fast-data-transfer](https://github.com/fast-data-transfer)
-- support-fdt@monalisa.cern.ch
 
 Email:
 - support-fdt@monalisa.cern.ch
@@ -31,6 +30,10 @@ Google currently provides network connectivity of up to 2 Gbps per VCPU (hyperth
 
 If you are running this tutorial on your own, you can use any 2 servers or virtual machines with Centos 7. Other linux distributions work too, of course. But some of the command syntax might be different, for example the installation of java.
 
+_Google Cloud Internet2 Egress Waiver_
+
+For members of Internet2 in the Higher Education category, GC offers an waiver for data egress fees. You can find more details and fill out the waiver form here:
+- [https://support.google.com/cloud/answer/7476636?hl=en](https://support.google.com/cloud/answer/7476636?hl=en)
 
 **Access to the Google Cloud virtual machines**
 

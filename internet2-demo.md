@@ -10,7 +10,7 @@ Tutorial given on October 15, 2017 at the Internet2 2017 Technology exchange mee
 **FDT Pointers**
 
 Github:
-- https://github.com/fast-data-transfer
+- [github.com/fast-data-transfer](https://github.com/fast-data-transfer)
 - support-fdt@monalisa.cern.ch
 
 Email:
@@ -21,7 +21,7 @@ Twitter:
 
 Developer Team:
 - Justas Balcas, jbalcas@caltech.edu
-- Raimondas Sirvinskas, raimondas.sirvinskas@cern.ch, www.linkedin.com/in/rsirvins
+- Raimondas Sirvinskas, raimondas.sirvinskas@cern.ch, [www.linkedin.com/in/rsirvins](www.linkedin.com/in/rsirvins)
 
 
 **Setup**

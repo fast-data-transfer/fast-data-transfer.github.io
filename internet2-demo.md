@@ -29,6 +29,8 @@ export SERVER2=$(hostname --ip-address)
 
 Export these values on the other server too. These are the private IP addresses, not the ones you used above for login into the VMs.
 
+<font color=red>Note!</font>: If your session gets disconnected you will need to reset these shell variables or use the IPs directly in the examples below.
+
 
 **Setup and FDT Installation**
 
@@ -147,16 +149,16 @@ ON VM1
 
 **Testing network connectivity**
 
-To test the network connectivity one can start a transfer of data from /dev/zero on the server (VM2) to /dev/null on the client (VM1) using 10 streams in blocking mode, for both the server and the client with 8 MBytes buffers. The server will stop after the test is finished 
+To test the network connectivity one can start a transfer of data from /dev/zero on the server (SERVER1) to /dev/null on the client (SERVER2) using 10 streams in blocking mode, for both the server and the client with 8 MBytes buffers. The server will stop after the test is finished.
 
-On the VM2 (server):
+On the SERVER2 (server):
 ```
-[remote computer]$ java -jar fdt.jar -bio -bs 8M -f $SERVER1 -S
+java -jar fdt.jar -bio -bs 8M -f $SERVER1 -S
 ```
 
-On the VM1 (client):
+On SERVER1 (client):
 ```
-[local computer]$ java -jar fdt.jar -c $SERVER2 -bio -P 10 -d /dev/null /dev/zero
+java -jar fdt.jar -c $SERVER2 -bio -P 10 -d /dev/null /dev/zero
 ```
 
  _SCP mode_

@@ -276,12 +276,11 @@ java -jar fdt.jar  -c <source-host> -ls /tmp/
 **FDT Plugin**
 
 
-FDT allows to load user defined classes for Pre- and Post-Processing of file transfers. This functionality can be used to easily interface FDT with mass storage systems and to implement any additional Access Control List (ACL) to the files transfered by FDT.
-It can also be used for packing, compression or customized integrity check.
+FDT allows to load user defined classes for Pre- and Post-Processing of file transfers. This functionality can be used to easily interface FDT with storage systems and to implement additional Access Control List (ACL) to files transfered by FDT. It can also be used for packing, compression or customized integrity check.
 
-The user can define its own syntax for managing files on different storage systems. The implementation for the Pre/Post Processing interfaces allows the user to define the mechanism to perform local staging or to move the transfered files to a storage system after they are transfered by FDT.  The two procedures act as filters for the source and destination fields in the FDT syntax.
+The user can define its own syntax for managing files on different storage systems. The implementation for the Pre/Post Processing interfaces allows the user to define the mechanism to perform local staging or to move the transfered files to a storage system after they are transferred by FDT. The two procedures act as filters for the source and destination fields in the FDT syntax.
 
-In the plugin shown here the files will be first zipped in <filename>.zip by the PreZipFilter and their names will be changed in the ProcessorInfo and returned to the FDT client. Then <filename>.zip will be transferred to the destination where the PostZipFilter will uzip it and delete the zip file.
+In the plugin shown below, the files will be first zipped in <filename>.zip by the PreZipFilter and their names will be changed in the ProcessorInfo and returned to the FDT client. Then <filename>.zip will be transferred to the destination where the PostZipFilter will uzip it and delete the zip file.
 
 On both servers:
 ```

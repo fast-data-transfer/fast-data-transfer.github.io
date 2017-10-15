@@ -11,6 +11,8 @@ We used the google cloud SDK (gcloud) for instantiating and customizing the virt
 
 Google currently provides network connectivity of up to 2 Gbps per VCPU (hyperthread) with maximum 16 Gbps per VM. We will test this in the tutorial for our instances. Google is looking for feedback from groups who would like to do really high throughput networking (40+ per VM). Feel free to let us know or the google team in this Internet2 meeting.
 
+If you are running this tutorial on your own, you can use any 2 servers or virtual machines with Centos 7. Other linux distributions work too, of course. But some of the command syntax might be different, for example the installation of java.
+
 
 **Access to the Google Cloud virtual machines**
 

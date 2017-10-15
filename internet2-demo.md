@@ -32,7 +32,7 @@ If you are running this tutorial on your own, you can use any 2 servers or virtu
 
 _Google Cloud Internet2 Egress Waiver_
 
-For members of Internet2 in the Higher Education category, GC offers an waiver for data egress fees. You can find more details and fill out the waiver form here:
+For members of Internet2 in the Higher Education category, GC offers a waiver for data egress fees. You can find more details and fill out the waiver form here:
 - [https://support.google.com/cloud/answer/7476636?hl=en](https://support.google.com/cloud/answer/7476636?hl=en)
 
 **Access to the Google Cloud virtual machines**

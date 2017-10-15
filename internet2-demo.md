@@ -154,7 +154,11 @@ java -jar fdt.jar -S
 
 ON SERVER1
 ```
-java -jar fdt.jar -fl ./file_list.txt -c <remote_address> -d /home/fdt/files
+# create files and list first. User /dev/zero if /dev/urandom takes too long.
+for i in {0..9}; do echo $i; dd if=/dev/urandom of=/tmp/f${i} count=204800; done
+ls -1 /tmp/f* > file_list.txt
+# do transfer from SERVER1 to SERVER2
+java -jar fdt.jar -fl ./file_list.txt -c $SERVER2 -d /home/fdt/
 ```
 
 

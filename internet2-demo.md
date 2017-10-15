@@ -79,7 +79,7 @@ java -jar fdt.jar -version
 ```
 
 
-**Getting help**
+**Help**
 
 The `-help` flag will print out all flags with descriptions.
 ```

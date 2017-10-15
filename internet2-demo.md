@@ -6,6 +6,9 @@
 
 Tutorial given on October 15, 2017 at the Internet2 2017 Technology exchange meeting in San Francisco. The use of virtual machines for the tutorial was made possible through the support of Google Cloud for Higher Education & Research.
 
+The link to the presentation is given here:
+[indico.hep.caltech.edu/indico/event/fdt](http://indico.hep.caltech.edu/indico/event/fdt)
+
 **FDT Pointers**
 
 Github:

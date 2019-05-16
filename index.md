@@ -1,5 +1,7 @@
 [[Home](index.md)]   [[Documentation](doc-fdt-ddcopy.md)]  [[Performance Tests](perf-disk-to-disk.md)] [[Internet2 Demo](internet2-demo.md)]
 
+[[Download releases](https://github.com/fast-data-transfer/fdt/releases)]
+
 ### Fast Data Transfer - FDT
 
 FDT is an Application for Efficient Data Transfers which is capable of
